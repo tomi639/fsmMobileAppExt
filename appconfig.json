@@ -1,0 +1,9 @@
+{
+    "name": "Mobile web container extension",
+    "provider": "SAP FSM",
+    "description": "Sample extension for the usage inside the mobile web container",   
+    "version": "1.0.0", 
+    "icon": "https://raw.githubusercontent.com/tomi639/js-test-extension/master/icon.png",
+    "useShellSDK": false,
+    "outletPositions": [] 
+  }
