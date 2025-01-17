@@ -6,10 +6,39 @@
     <title>FSM Demo</title>
 </head>
 <body>
-    Demo
+    Demo v2
+
     <p id="error"></p>
     <p id="context"></p>
 
-    <script src="index.js"></script>
+    <script>
+        fetch(`/web-container-context`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(checkStatus)
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('#context').innerHTML = data;}
+        ).catch(error => {
+            document.getElementById('#context').innerHTML = error + '<br><br>Context from mobile web container is not available. ';
+        })
+
+        function checkStatus(res) {
+            if(res.ok){
+                return res;
+            } else {
+              throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}`);
+            }
+          }
+    </script>
+
+
+
+    
+
+    <!-- <script src="index.js"></script> -->
 </body>
 </html>
