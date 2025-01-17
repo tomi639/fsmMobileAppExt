@@ -1,5 +1,5 @@
 const context = (() => {
-    const CONTEXT_URL = 'https://tomi639.github.io/fsmMobileAppExt//web-container-access-point';
+    const CONTEXT_URL = 'https://tomi639.github.io/fsmMobileAppExt/web-container-access-point';
 
     let mobileAppContext = undefined;
 
@@ -13,7 +13,7 @@ const context = (() => {
 
     async function fetchContext() {
         const response = await fetch(
-            CONTEXT_URL,
+            'web-container-access-point',
             { method: 'POST' }
         );
 
