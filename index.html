@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSM Demo</title>
 </head>
+
 <body>
-    Demo v2
+    Demo v3
 
     <p id="error"></p>
     <p id="context"></p>
+
+    <script>
+
+        fetch(
+            'https://tomi639.github.io/fsmMobileAppExt',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('#context').innerHTML = data;
+            }).catch(error => {
+                document.getElementById('#error').innerHTML = error;
+            })
+
+    </script>
+
 
     <!-- <script>
         fetch(`/web-container-context`, {
@@ -37,8 +57,9 @@
 
 
 
-    
 
-    <script src="index.js"></script>
+
+    <!-- <script src="index.js"></script> -->
 </body>
+
 </html>
