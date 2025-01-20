@@ -31,6 +31,28 @@
                 windows.location.replace = 'https://tomi639.github.io/fsmMobileAppExt'
             });
 
+            fetch(`/web-container-context`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(checkStatus)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('#context').innerHTML = data;}
+            ).catch(error => {
+                document.getElementById('#context').innerHTML = error + '<br><br>Context from mobile web container is not available. ';
+            })
+    
+            function checkStatus(res) {
+                if(res.ok){
+                    return res;
+                } else {
+                  throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}`);
+                }
+              }
+
     </script>
 
 
