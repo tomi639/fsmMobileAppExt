@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    Demo v7
+    Demo v8
 
     <p id="error"></p>
     <p id="context"></p>
@@ -16,11 +16,20 @@
     <script>
         let context = undefined;
         fetch(
-            'https://tomi639.github.io/fsmMobileAppExt/web-container-access-point',
+            '/web-container-access-point',
             {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    "content-length": "262",
+                    "cache-control": "max-age=0",
+                    "user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; Android SDK built for x86 Build/OSM1.180201.007; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.98 Mobile Safari/537.36",
+                    "upgrade-insecure-requests": "1",
+                    "origin": "null",
+                    "content-type": "application/x-www-form-urlencoded",
+                    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+                    "accept-encoding": "gzip, deflate",
+                    "accept-language": "en-IE,en-US;q=0.8",
+                    "x-requested-with": "com.sap.fsm"
                 }
             })
             .then(res => {
