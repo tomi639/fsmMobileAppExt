@@ -14,19 +14,17 @@
     <p id="context"></p>
 
     <script>
-
+        let context = undefined;
         fetch(
             'web-container-access-point',
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' }
             })
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('#context').innerHTML = data;
-            }).catch(error => {
-                document.getElementById('#error').innerHTML = error;
-            })
+            .then(res => {
+                document.getElementById('#context').innerHTML = 'lorem ipsum';
+                context = res.body;
+                windows.location.href = 'https://tomi639.github.io/fsmMobileAppExt/'
+            });
 
     </script>
 
