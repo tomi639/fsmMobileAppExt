@@ -32,7 +32,7 @@
             }); */
 
         fetch(
-            'https://tomi639.github.io/fsmMobileAppExt', {
+            'https://tomi639.github.io/fsmMobileAppExt/demo_test', {
                 method:'POST'
             }
         ).then( (response) => {
@@ -44,6 +44,7 @@
         }).then((data) => {
             document.getElementById('context').innerHTML = 'lorem ipsum';
             context = data.body;
+            window.location.replace('https://tomi639.github.io/fsmMobileAppExt');
         }).catch((error) => {
             document.getElementById('error').innerHTML = 'lorem ipsum ERROR';
         });
