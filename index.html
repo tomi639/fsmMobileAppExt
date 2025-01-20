@@ -16,7 +16,7 @@
     <script>
         let context = undefined;
         fetch(
-            'https://tomi639.github.io/fsmMobileAppExt/web-container-access-point',
+            '/web-container-access-point',
             {
                 method: 'POST',
                 headers: {
@@ -28,7 +28,7 @@
             .then(res => {
                 document.getElementById('#context').innerHTML = 'lorem ipsum';
                 context = res.body;
-                windows.location.href = 'https://tomi639.github.io/fsmMobileAppExt'
+                windows.location.replace = 'https://tomi639.github.io/fsmMobileAppExt'
             });
 
     </script>
