@@ -15,7 +15,7 @@
 
     <script>
         let context = undefined;
-        fetch(
+        /* fetch(
             'https://tomi639.github.io/fsmMobileAppExt',
             {
                 method: 'POST',
@@ -29,29 +29,25 @@
                 document.getElementById('#context').innerHTML = 'lorem ipsum';
                 context = res.body;
                 windows.location.replace = 'https://tomi639.github.io/fsmMobileAppExt'
-            });
+            }); */
 
-            fetch(`/web-container-context`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(checkStatus)
-            .then(res => res.json())
-            .then(data => {
-                document.getElementById('#context').innerHTML = data;}
-            ).catch(error => {
-                document.getElementById('#context').innerHTML = error + '<br><br>Context from mobile web container is not available. ';
-            })
-    
-            function checkStatus(res) {
-                if(res.ok){
-                    return res;
-                } else {
-                  throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}`);
-                }
-              }
+        fetch(
+            'https://tomi639.github.io/fsmMobileAppExt', {
+                method:'POST'
+            }
+        ).then( (response) => {
+            if (response.ok) {
+                return response;
+            } else {
+                return Promise.reject(response);
+            }
+        }).then((data) => {
+            document.getElementById('context').innerHTML = 'lorem ipsum';
+            context = data.body;
+        }).catch((error) => {
+            document.getElementById('error').innerHTML = 'lorem ipsum ERROR';
+        });
+
 
     </script>
 
