@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    Demo v5
+    Demo v6
 
     <p id="error"></p>
     <p id="context"></p>
@@ -19,6 +19,9 @@
             '/web-container-access-point',
             {
                 method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
             .then(res => {
                 document.getElementById('#context').innerHTML = 'lorem ipsum';
